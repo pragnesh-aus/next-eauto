@@ -13,7 +13,7 @@ export default function Layout({ children }) {
       </AppBar>
       <Container>{children}</Container>
       <footer>
-        <Typography>All rights reserved. Next eAuto 2021</Typography>
+        <Typography>All rights reserved. Next eAuto 2021.</Typography>
       </footer>
     </div>
   );
