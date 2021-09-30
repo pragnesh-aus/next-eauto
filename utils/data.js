@@ -46,7 +46,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       countInStock: 20,
-      description: 'A popular engine oil for car.',
+      description: 'A popular engine oil for bike.',
     },
     {
       name: 'Special Engine Oil',
@@ -58,7 +58,7 @@ const data = {
       rating: 4.5,
       numReviews: 10,
       countInStock: 20,
-      description: 'A popular engine oil for car.',
+      description: 'A popular engine oil for bike.',
     },
   ],
 };
