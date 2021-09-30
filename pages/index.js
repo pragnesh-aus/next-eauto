@@ -8,6 +8,7 @@ import {
   Grid,
   Typography,
 } from '@material-ui/core';
+import NextLink from 'next/link';
 import Layout from '../components/Layout';
 import data from '../utils/data';
 
@@ -20,16 +21,18 @@ export default function Home() {
           {data.products.map((products) => (
             <Grid item md={4} key={products.name}>
               <Card>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    image={products.images}
-                    title={products.name}
-                  ></CardMedia>
-                  <CardContent>
-                    <Typography>{products.name}</Typography>
-                  </CardContent>
-                </CardActionArea>
+                <NextLink href={`/product/${products.slug}`} passHref>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      image={products.images}
+                      title={products.name}
+                    ></CardMedia>
+                    <CardContent>
+                      <Typography>{products.name}</Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </NextLink>
                 <CardActions>
                   <Typography>${products.price}</Typography>
                   <Button size="small" color="primary">

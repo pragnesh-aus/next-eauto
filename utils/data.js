@@ -2,6 +2,7 @@ const data = {
   products: [
     {
       name: 'Free Engine Oil',
+      slug: 'free-engine-oil',
       category: 'Car Engine Oil',
       images: '/images/engine_oil1.jpg',
       price: 70,
@@ -13,6 +14,7 @@ const data = {
     },
     {
       name: 'Full Synthetic Oils',
+      slug: 'full-synthetic-oils',
       category: 'Car Engine Oil',
       images: '/images/engine_oil2.jpg',
       price: 50,
@@ -24,6 +26,7 @@ const data = {
     },
     {
       name: 'Semi Synthetic Oils',
+      slug: 'semi-synthetic-oils',
       category: 'Car Engine Oil',
       images: '/images/engine_oil3.jpg',
       price: 45,
@@ -35,6 +38,7 @@ const data = {
     },
     {
       name: 'Mineral Engine Oil',
+      slug: 'mineral-engine-oil',
       category: 'Bike Engine Oil',
       images: '/images/engine_oil4.jpg',
       price: 100,
@@ -46,6 +50,7 @@ const data = {
     },
     {
       name: 'Special Engine Oil',
+      slug: 'special-engine-oil',
       category: 'Bike Engine Oil',
       images: '/images/engine_oil5.jpg',
       price: 200,
