@@ -14,12 +14,13 @@ import {
   Typography,
 } from '@material-ui/core';
 import useStyles from '../../utils/styles';
+import Product from '../../models/Product';
+import db from '../../utils/db';
 
-export default function ProdcutScreen() {
+export default function ProdcutScreen(props) {
+  const { product } = props;
   const classes = useStyles();
-  const router = useRouter();
-  const { slug } = router.query;
-  const product = data.products.find((a) => a.slug === slug);
+
   if (!product) {
     return <div>Product Not Found</div>;
   }
@@ -112,4 +113,18 @@ export default function ProdcutScreen() {
       </Grid>
     </Layout>
   );
+}
+
+export async function getServerSideProps(context) {
+  const { params } = context;
+  const { slug } = params;
+  await db.connect();
+  const product = await Product.findOne({ slug }).lean();
+  await db.disconnect();
+  return {
+    props: {
+      // converting to the primary data type
+      product: db.convertDocToObj(product),
+    },
+  };
 }
