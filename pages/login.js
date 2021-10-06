@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   List,
@@ -10,12 +10,28 @@ import {
 import Layout from '../components/Layout';
 import useStyles from '../utils/styles';
 import NextLink from 'next/link';
+import axios from 'axios';
 
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const classes = useStyles();
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post('/api/users/login', {
+        email,
+        password,
+      });
+      alert('success login');
+    } catch (err) {
+      alert(err.response.data ? err.response.data.message : err.message);
+    }
+  };
   return (
     <Layout title="Login">
-      <form className={classes.form}>
+      <form onSubmit={submitHandler} className={classes.form}>
         <Typography component="h1" variant="h1">
           Login
         </Typography>
@@ -26,7 +42,8 @@ export default function Login() {
               fullWidth
               id="email"
               label="Email"
-              imputProps={{ type: 'email' }}
+              inputProps={{ type: 'email' }}
+              onChange={(e) => setEmail(e.target.value)}
             ></TextField>
           </ListItem>
           <ListItem>
@@ -35,7 +52,8 @@ export default function Login() {
               fullWidth
               id="password"
               label="Password"
-              imputProps={{ type: 'password' }}
+              inputProps={{ type: 'password' }}
+              onChange={(e) => setPassword(e.target.value)}
             ></TextField>
           </ListItem>
           <ListItem>
