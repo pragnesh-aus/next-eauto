@@ -16,6 +16,7 @@ import { useRouter } from 'next/router';
 import Cookies from 'js-cookie';
 import { useSnackbar } from 'notistack';
 import { Controller, useForm } from 'react-hook-form';
+
 export default function Register() {
   const {
     handleSubmit,
@@ -34,7 +35,7 @@ export default function Register() {
   }, []);
 
   const classes = useStyles();
-  const submitHandler = async (name, email, password, confirmPassword) => {
+  const submitHandler = async ({ name, email, password, confirmPassword }) => {
     closeSnackbar();
     if (password !== confirmPassword) {
       enqueueSnackbar("Password don't match", { variant: 'error' });
