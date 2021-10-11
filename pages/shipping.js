@@ -48,13 +48,16 @@ export default function Shipping() {
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: { fullName, address, city, postalCode, country },
     });
-    Cookies.set('shippingAddress', {
-      fullName,
-      address,
-      city,
-      postalCode,
-      country,
-    }); // DATA FROM SUBMIT HANDLER
+    Cookies.set(
+      'shippingAddress',
+      JSON.stringify({
+        fullName,
+        address,
+        city,
+        postalCode,
+        country,
+      })
+    ); // DATA FROM SUBMIT HANDLER
     router.push('/payment');
   };
   return (
