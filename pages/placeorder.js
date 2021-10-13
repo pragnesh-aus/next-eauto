@@ -51,8 +51,10 @@ function PlaceOrder() {
       router.push('/cart');
     }
   }, []);
+
   const { closeSnackbar, enqueueSnackbar } = useSnackbar();
   const [loading, setLoading] = useState(false);
+
   const placeOrderHandler = async () => {
     closeSnackbar();
     try {
@@ -84,7 +86,7 @@ function PlaceOrder() {
     }
   };
   return (
-    <Layout title="Shopping Cart">
+    <Layout title="Place Order">
       <CheckoutWizard activeStep={3}></CheckoutWizard>
       <Typography component="h1" variant="h1">
         Place Order
