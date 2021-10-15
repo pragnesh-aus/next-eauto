@@ -20,19 +20,19 @@ import NextLink from 'next/link';
 import { Controller, useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack';
 import Cookies from 'js-cookie';
-function reducer(state, action) {
-  switch (action.type) {
-    case 'FETCH_REQUEST':
-      return { ...state, loading: true, error: '' };
-    case 'FETCH_SUCCESS':
-      return { ...state, loading: false, orders: action.payload, error: '' };
-    case 'FETCH_FAIL':
-      return { ...state, loading: false, order: action.payload };
+// function reducer(state, action) {
+//   switch (action.type) {
+//     case 'FETCH_REQUEST':
+//       return { ...state, loading: true, error: '' };
+//     case 'FETCH_SUCCESS':
+//       return { ...state, loading: false, orders: action.payload, error: '' };
+//     case 'FETCH_FAIL':
+//       return { ...state, loading: false, order: action.payload };
 
-    default:
-      state;
-  }
-}
+//     default:
+//       state;
+//   }
+// }
 function Profile() {
   const { state, dispatch } = useContext(Store);
   const {
