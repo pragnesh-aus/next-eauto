@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-document-import-in-page */
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
-export default class MyDocument extends Document {
+class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
@@ -38,3 +39,4 @@ MyDocument.getInitialProps = async (ctx) => {
     ],
   };
 };
+export default MyDocument;
