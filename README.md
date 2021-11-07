@@ -5,13 +5,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/pragnesh-aus/next-eauto.git
+$ cd next-eauto
+$ npm install
+$ npm run dev
+$ Open http://localhost:3000/api/seed
+$ Open http://localhost:3000
+
 ```
 ## DEMO USER DETAILS : 
+
 username : admin@example.com
 password: 1234
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
